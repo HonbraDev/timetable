@@ -6,11 +6,13 @@ export default function TimeTable({
   hyperlegible,
   border,
   fontSize,
+  label,
 }: {
   data: TimeTableType;
   hyperlegible: boolean;
   border: boolean;
   fontSize: number;
+  label: string;
 }) {
   return (
     <table
@@ -20,7 +22,7 @@ export default function TimeTable({
       style={{ fontSize: `${fontSize}mm` }}
     >
       <tr className="header-row">
-        <th className="header-cell">Tercie 21 / 22</th>
+        <th className="header-cell">{label}</th>
         {timePeriods.map((timePeriod) => (
           <th className="header-cell" key={timePeriod.join()}>
             {timePeriod.join(" - ")}

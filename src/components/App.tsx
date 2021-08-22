@@ -1,5 +1,5 @@
 import { useState } from "react";
-import timeTable from "../data/timetable";
+import initialData from "../data/data";
 import "../styles/styles.scss";
 import TimeTable from "./TimeTable";
 
@@ -7,7 +7,7 @@ export default function App() {
   const [hyperlegible, setHyperlegible] = useState(false);
   const [border, setBorder] = useState(true);
   const [fontSize, setFontSize] = useState(7);
-  const [data, setData] = useState(timeTable);
+  const [data, setData] = useState(initialData);
 
   return (
     <>
@@ -68,10 +68,11 @@ export default function App() {
       </div>
 
       <TimeTable
-        data={data}
+        data={data.timeTable}
         hyperlegible={hyperlegible}
         border={border}
         fontSize={fontSize}
+        label={data.label}
       />
     </>
   );
